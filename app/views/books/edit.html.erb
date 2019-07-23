@@ -1,4 +1,4 @@
-<h1>Form Tambah Buku</h1>
+<h1>Form Edit Buku</h1>
 
 <%= form_for @book do |f| %>
   <table>
@@ -12,7 +12,7 @@
     </tr>
     <tr>
       <td><%= f.label :author_id, 'Penulis' %></td>
-      <td><%= f.select :author_id, Author.all.collect{ |a| [a.name, a.id]}, prompt: '-- Pilih penulis --' %></td>
+      <td><%= f.select :author_id, Author.all.collect{ |a| [a.name, a.id] } %></td>
     </tr>
     <tr>
       <td><%= f.label :page, 'Halaman' %></td>
@@ -24,7 +24,7 @@
     </tr>
     <tr>
       <td></td>
-      <td><%= f.submit 'Input' %>&nbsp;<%= f.button 'Hapus', type: :reset %></td>
+      <td><%= f.submit 'Update' %></td>
     </tr>
   </table>
 <% end %>

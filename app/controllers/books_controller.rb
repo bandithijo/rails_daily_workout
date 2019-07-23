@@ -14,11 +14,22 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(resource_params)
     if @book.save
-      flash[:notice] = 'Buku berhasil diinputkan ke dalma database!'
+      flash[:notice] = 'Buku berhasil diinputkan ke dalam database!'
       redirect_to books_path
     else
       render 'new'
     end
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.update(resource_params)
+    flash[:notice] = 'Data buku berhasil diperbaharui!'
+    redirect_to book_path
   end
 
   private

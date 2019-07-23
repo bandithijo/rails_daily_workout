@@ -21,6 +21,7 @@
       <td><%= book.price %></td>
       <td>
         <%= link_to 'detail', book_path(book) %> |
+        <%= link_to 'edit', edit_book_path(book) %> |
       </td>
     </tr>
   <% end %>

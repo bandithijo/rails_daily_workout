@@ -1,0 +1,21 @@
+<h1>Daftar Penulis</h1>
+
+<table>
+  <tr>
+    <th>No.</th>
+    <th>Nama Penulis</th>
+    <th>Alamat</th>
+    <th>Umur</th>
+    <th>Jumlah Buku</th>
+  </tr>
+  <% no = 0 %>
+  <%= @authors.each do |author| %>
+    <tr>
+      <td><%= no += 1 %></td>
+      <td><%= author.name %></td>
+      <td><%= author.address %></td>
+      <td><%= author.old %></td>
+      <td><%= author.books.count %></td>
+    </tr>
+  <% end %>
+</table>

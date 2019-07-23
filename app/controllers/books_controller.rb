@@ -17,6 +17,7 @@ class BooksController < ApplicationController
       flash[:notice] = 'Buku berhasil diinputkan ke dalam database!'
       redirect_to books_path
     else
+      flash[:notice] = 'data gagal disimpan!'
       render 'new'
     end
   end

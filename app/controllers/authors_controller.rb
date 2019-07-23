@@ -22,6 +22,17 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def edit
+    @author = Author.find(params[:id])
+  end
+
+  def update
+    @author = Author.find(params[:id])
+    @author.update(resource_params)
+    flash[:notice] = 'Data penulis berhasil diperbaharui!'
+    redirect_to author_path
+  end
+
   private
 
   def resource_params

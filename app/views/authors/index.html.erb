@@ -19,6 +19,7 @@
       <td><%= author.books.count %></td>
       <td>
         <%= link_to 'detail', author_path(author) %> |
+        <%= link_to 'edit', edit_author_path(author) %> |
       </td>
     </tr>
   <% end %>

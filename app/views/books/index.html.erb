@@ -8,6 +8,7 @@
     <th>Deskripsi</th>
     <th>Halaman</th>
     <th>Harga</th>
+    <th>Aksi</th>
   </tr>
   <% no = 0 %>
   <% @books.each do |book| %>
@@ -18,6 +19,9 @@
       <td><%= truncate(book.description, length: 45) %></td>
       <td><%= book.page %></td>
       <td><%= book.price %></td>
+      <td>
+        <%= link_to 'detail', book_path(book) %> |
+      </td>
     </tr>
   <% end %>
 </table>

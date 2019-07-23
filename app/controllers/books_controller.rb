@@ -32,6 +32,13 @@ class BooksController < ApplicationController
     redirect_to book_path
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    flash[:notice] = 'Buku berhasil di hapus dari database!'
+    redirect_to books_path
+  end
+
   private
 
   def resource_params

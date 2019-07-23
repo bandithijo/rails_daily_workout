@@ -1,0 +1,32 @@
+<h1>Detail Penulis</h1>
+
+<table>
+  <tr>
+    <td>ID</td>
+    <td>#<%= @author.id %></td>
+  </tr>
+  <tr>
+    <td>Nama Penulis</td>
+    <td><%= @author.name %></td>
+  </tr>
+  <tr>
+    <td>Alamat Penulis</td>
+    <td><%= @author.address %></td>
+  </tr>
+  <tr>
+    <td>Umur Penulis</td>
+    <td><%= @author.old %></td>
+  </tr>
+  <tr>
+    <td>Jumlah Buku</td>
+    <td><%= @author.books.count %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <% @author.books.each do |book| %>
+        - <%= book.title %><br>
+      <% end %>
+    </td>
+  </tr>
+</table>

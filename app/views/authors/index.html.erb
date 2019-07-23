@@ -7,6 +7,7 @@
     <th>Alamat</th>
     <th>Umur</th>
     <th>Jumlah Buku</th>
+    <th>Aksi</th>
   </tr>
   <% no = 0 %>
   <% @authors.each do |author| %>
@@ -16,6 +17,9 @@
       <td><%= author.address %></td>
       <td><%= author.old %></td>
       <td><%= author.books.count %></td>
+      <td>
+        <%= link_to 'detail', author_path(author) %> |
+      </td>
     </tr>
   <% end %>
 </table>

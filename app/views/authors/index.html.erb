@@ -9,7 +9,7 @@
     <th>Jumlah Buku</th>
   </tr>
   <% no = 0 %>
-  <%= @authors.each do |author| %>
+  <% @authors.each do |author| %>
     <tr>
       <td><%= no += 1 %></td>
       <td><%= author.name %></td>

@@ -1,0 +1,15 @@
+<div style="margin: 20px 0;">
+  <p>
+    <% if params[:controller] == 'books' %>
+      <% if params[:action] == 'show' || params[:action] == 'new' || params[:action] == 'edit' %>
+        <%= link_to '<<Kembali', root_path %>
+      <% end %>
+    <% end %>
+
+    <% if params[:controller] == 'authors' %>
+      <% if params[:action] == 'show' || params[:action] == 'new' || params[:action] == 'edit' %>
+        <%= link_to '<<Kembali', authors_path %>
+      <% end %>
+    <% end %>
+  </p>
+</div>

@@ -4,6 +4,7 @@
   <tr>
     <th>No.</th>
     <th>Judul</th>
+    <th>Penulis</th>
     <th>Deskripsi</th>
     <th>Halaman</th>
     <th>Harga</th>
@@ -13,6 +14,7 @@
     <tr>
       <td><%= no += 1 %></td>
       <td><%= book.title %></td>
+      <td><%= book.author.name %></td>
       <td><%= truncate(book.description, length: 45) %></td>
       <td><%= book.page %></td>
       <td><%= book.price %></td>

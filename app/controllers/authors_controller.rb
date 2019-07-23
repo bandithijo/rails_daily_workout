@@ -33,6 +33,13 @@ class AuthorsController < ApplicationController
     redirect_to author_path
   end
 
+  def destroy
+    @author = Author.find(params[:id])
+    @author.destroy
+    flash[:notice] = 'Data penulis berhasil dihapus!'
+    redirect_to authors_path
+  end
+
   private
 
   def resource_params

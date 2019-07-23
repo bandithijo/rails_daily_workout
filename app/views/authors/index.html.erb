@@ -20,6 +20,7 @@
       <td>
         <%= link_to 'detail', author_path(author) %> |
         <%= link_to 'edit', edit_author_path(author) %> |
+        <%= link_to 'delete', author_path(author), method: :delete, data: {confirm: "Apakah anda yakin ingin menghapus:\n\"#{author.name}\"?"} %>
       </td>
     </tr>
   <% end %>

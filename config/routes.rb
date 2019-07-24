@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'books#index'
   resources :books
   resources :authors
+  resources :accounts, only: [:new, :create]
+  get 'signup', to: 'accounts#new'
 end

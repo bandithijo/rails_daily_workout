@@ -7,7 +7,7 @@ class AccountsController < ApplicationController
     @user = User.new(resource_params)
     if @user.save
       flash[:notice] = 'Anda telah berhasil melakukan registrasi!'
-      redirect_to new_user_path
+      redirect_to signup_path
     else
       render 'new'
     end

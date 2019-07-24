@@ -12,7 +12,9 @@
     <th>Deskripsi</th>
     <th>Halaman</th>
     <th>Harga</th>
-    <th>Aksi</th>
+    <% if current_user %>
+      <th>Aksi</th>
+    <% end %>
   </tr>
   <% no = 0 %>
   <% @books.each do |book| %>
@@ -23,15 +25,19 @@
       <td><%= truncate(book.description, length: 45) %></td>
       <td><%= book.page %></td>
       <td><%= book.price %></td>
+      <% if current_user %>
       <td>
         <%= link_to 'detail', book_path(book) %> |
         <%= link_to 'edit', edit_book_path(book) %> |
         <%= link_to 'delete', book_path(book), method: :delete, data: {confirm: "Apakah kamu yakin akan menghapus data buku:\n\"#{book.title}\"?"} %>
       </td>
+      <% end %>
     </tr>
   <% end %>
 </table>
 
+<% if current_user %>
 <div>
   <%= link_to '+ tambah buku baru', new_book_path %>
 </div>
+<% end %>

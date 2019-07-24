@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if user
       if user.authenticate(password)
-        redirect_to root_path, notice: "Anda berhasil login sebagai, #{user.name}"
+        redirect_to books_path, notice: "Anda berhasil login sebagai, #{user.name}"
       else
         redirect_to signin_path, notice: 'Username atau password yang anda masukkan, salah!'
       end

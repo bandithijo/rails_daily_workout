@@ -6,14 +6,32 @@
       <td><%= f.label :name, 'Nama lengkap' %></td>
       <td><%= f.text_field :name %></td>
     </tr>
+    <% if @user.errors[:name].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @user.errors[:name].first %></mark></td>
+      </tr>
+    <% end %>
     <tr>
       <td><%= f.label :username, 'Username' %></td>
       <td><%= f.text_field :username %></td>
     </tr>
+    <% if @user.errors[:username].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @user.errors[:username].first %></mark></td>
+      </tr>
+    <% end %>
     <tr>
       <td><%= f.label :password, 'Password' %></td>
       <td><%= f.password_field :password %></td>
     </tr>
+    <% if @user.errors[:password].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @user.errors[:password].first %></mark></td>
+      </tr>
+    <% end %>
     <tr>
       <td></td>
       <td><%= f.submit 'Daftar' %>&nbsp;<%= f.button 'Hapus', type: :reset %></td>

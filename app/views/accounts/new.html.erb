@@ -1,0 +1,22 @@
+<h1>Registrasi</h1>
+
+<%= form_for @user, url: accounts_path do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :name, 'Nama lengkap' %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :username, 'Username' %></td>
+      <td><%= f.text_field :username %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password, 'Password' %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit 'Daftar' %>&nbsp;<%= f.button 'Hapus', type: :reset %></td>
+    </tr>
+  </table>
+<% end %>

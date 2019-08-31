@@ -1,0 +1,32 @@
+<h1>Detail Buku</h1>
+
+<%= render 'layouts/notice' %>
+
+<table>
+  <tr>
+    <td>ID</td>
+    <td>#<%= @book.id %></td>
+  </tr>
+  <tr>
+    <td>Judul</td>
+    <td><%= @book.title %></td>
+  </tr>
+  <tr>
+    <td>Deskripsi</td>
+    <td><%= @book.description %></td>
+  </tr>
+  <tr>
+    <td>Penulis</td>
+    <td><%= @book.author.name %> (<%= @book.author.id %>)</td>
+  </tr>
+  <tr>
+    <td>Halaman</td>
+    <td><%= @book.page %> halaman</td>
+  </tr>
+  <tr>
+    <td>Harga</td>
+    <td><%= number_to_currency(@book.price, unit: 'Rp') %></td>
+  </tr>
+</table>
+
+<%= render 'layouts/backmenu' %>

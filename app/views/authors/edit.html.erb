@@ -1,0 +1,24 @@
+<h1>Form Edit Data Penulis</h1>
+
+<%= form_for @author do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :name, 'Nama penulis' %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :address, 'Alamat penulis' %></td>
+      <td><%= f.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :old, 'Umur penulis' %></td>
+      <td><%= f.text_field :old %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit 'update' %></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= render 'layouts/backmenu' %>

@@ -1,0 +1,45 @@
+<h1>Daftar Penulis</h1>
+
+<%= render 'layouts/menu' %>
+
+<%= render 'layouts/notice' %>
+
+<table>
+  <tr>
+    <th>No.</th>
+    <th>Nama Penulis</th>
+    <th>Alamat</th>
+    <% if current_user %>
+    <th>Umur</th>
+    <% end %>
+    <th>Jumlah Buku</th>
+    <% if current_user %>
+    <th>Aksi</th>
+    <% end %>
+  </tr>
+  <% no = 0 %>
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= no += 1 %></td>
+      <td><%= author.name %></td>
+      <td><%= author.address %></td>
+      <% if current_user %>
+      <td><%= author.old %></td>
+      <% end %>
+      <td><%= author.books.count %></td>
+      <% if current_user %>
+      <td>
+        <%= link_to 'detail', author_path(author) %> |
+        <%= link_to 'edit', edit_author_path(author) %> |
+        <%= link_to 'delete', author_path(author), method: :delete, data: {confirm: "Apakah anda yakin ingin menghapus:\n\"#{author.name}\"?"} %>
+      </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<% if current_user %>
+<div>
+  <%= link_to '+ tambah data penulis', new_author_path %>
+</div>
+<% end %>

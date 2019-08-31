@@ -1,0 +1,32 @@
+<h1>Form Edit Buku</h1>
+
+<%= form_for @book do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :title, 'Judul' %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :description, 'Deskripsi' %></td>
+      <td><%= f.text_area :description, rows: 6 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :author_id, 'Penulis' %></td>
+      <td><%= f.select :author_id, Author.all.collect{ |a| [a.name, a.id] } %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :page, 'Halaman' %></td>
+      <td><%= f.text_field :page %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :price, 'Harga' %></td>
+      <td><%= f.text_field :price %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit 'Update' %></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= render 'layouts/backmenu' %>

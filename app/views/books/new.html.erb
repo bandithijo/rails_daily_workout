@@ -1,0 +1,64 @@
+<h1>Form Tambah Buku</h1>
+
+<%= render 'layouts/notice' %>
+
+<%= form_for @book do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :title, 'Judul' %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <% if @book.errors[:title].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @book.errors[:title].first %></mark></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= f.label :description, 'Deskripsi' %></td>
+      <td><%= f.text_area :description, rows: 6 %></td>
+    </tr>
+    <% if @book.errors[:description].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @book.errors[:description].first %></mark></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= f.label :author_id, 'Penulis' %></td>
+      <td><%= f.select :author_id, Author.all.collect{ |a| [a.name, a.id]}, prompt: '-- Pilih penulis --' %></td>
+    </tr>
+    <% if @book.errors[:author_id].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @book.errors[:author_id].first %></mark></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= f.label :page, 'Halaman' %></td>
+      <td><%= f.text_field :page %></td>
+    </tr>
+    <% if @book.errors[:page].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @book.errors[:page].first %></mark></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= f.label :price, 'Harga' %></td>
+      <td><%= f.text_field :price %></td>
+    </tr>
+    <% if @book.errors[:price].any? %>
+      <tr>
+        <td></td>
+        <td><mark><%= @book.errors[:price].first %></mark></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td><%= f.submit 'Input' %>&nbsp;<%= f.button 'Hapus', type: :reset %></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= render 'layouts/backmenu' %>
